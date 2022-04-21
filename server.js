@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 const compression = require("compression");
 
 const PORT = process.env.PORT || 3001;
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/budget";
 
 const app = express();
 
@@ -14,16 +13,18 @@ app.use(compression());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(express.static("public"));
 
-mongoose.connect(MONGODB_URI, {
+const MONGODB_URI = "mongodb+srv://abelaj:Altin1526@cluster0.8gof9.mongodb.net/BudgetGraph?retryWrites=true&w=majority";
+
+mongoose.connect(MONGODB_URI || 'mongodb://0.0.0.0:27017/MoneyBudget', {
   useNewUrlParser: true,
-  useFindAndModify: false
 });
 
 // routes
-app.use(require("./routes/api.js"));
+app.use(require("./Develop/routes/api.js"));
+app.use("/", express.static("./Develop/public"));
 
+mongoose.set('debug', true);
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
 });
