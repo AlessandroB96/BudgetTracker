@@ -1,11 +1,70 @@
 body {
   font-size: 120%;
-  font-family: Arial;
+  background-image: url('./img/layered.svg');
+}
+
+.entire-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  grid-row: auto;
+}
+
+.left-container {
+  max-width: 400px;
+  margin-left: 30px;
+  margin-top: 150px;
+}
+
+img {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-bottom: 30px;
+  width: 30%;
+}
+
+.logo {
+  font-family: 'Lobster', cursive;
+  margin: auto;
+  font-size: 50px;
+  color: white;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.right-container {
+
+  max-width: 820px;
+  margin-right:100px;
+  grid-row: auto;
 }
 
 button, input {
   font-size: 100%;
-  font-family: Arial;
+  font-family: 'PT Sans', sans-serif;
+}
+
+#add-btn {
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(214, 171, 91);
+  cursor: pointer;
+  color: black;
+  font-size: 30px;
+}
+
+#sub-btn {
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(214, 171, 91);
+  cursor: pointer;
+  color: black;
+  font-size: 30px;
+}
+
+button:hover {
+  opacity: 90%;
 }
 
 table {
@@ -13,13 +72,16 @@ table {
 }
 
 td, th {
-  border: 1px solid #dddddd;
+  border: 1px solid #009473;
+  border-radius: 10px;
   text-align: left;
   padding: 8px;
+  text-align: center;
+  font-family: 'PT Sans', sans-serif;
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: #45796e;
 }
 
 .error {
@@ -27,19 +89,22 @@ tr:nth-child(even) {
 }
 
 .wrapper {
-  margin: 0 auto;
-  max-width: 825px;
-  text-align: center;
+  margin-top: 100px;
+  max-width: 825px; 
 }
 
 .total {
   font-size: 150%;
-  text-decoration: underline;
+  color: rgb(214, 171, 91);
+  font-family: 'PT Sans', sans-serif;
+  text-align: center;
 }
 
 .form {
-  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
   width: 100%;
+  gap: 20px;
 }
 
 .transactions {
@@ -48,4 +113,121 @@ tr:nth-child(even) {
   overflow: auto;
   width: 90%;
   margin: 0 auto;
+  color: white;
+}
+
+#myChart {
+  width: 800px;
+  margin-top: 50px;
+}
+
+
+@media screen and (max-width: 1270px) {
+
+  body {
+    font-size: 120%;
+    background-image: url('./img/layered-height.svg');
+  }
+
+  .left-container {
+    max-width: 400px;
+    margin: auto;
+    margin-top: 230px;
+  }
+
+  .form {
+    display: grid;
+    width: 100%;
+    margin: auto;
+    gap: 20px;
+  }
+
+  .right-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+  }
+
+  .wrapper {
+    margin-top: 200px;
+  }
+
+  .total {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 960px) {
+
+  .entire-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+  }
+  
+  .left-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 400px;
+  }
+
+  .right-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+  }
+  
+  .transactions {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 100%;
+    overflow: auto;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  thead {
+    width: 100%;
+  }
+
+  #tbody {
+    width: 100%;
+  }
+
+  tr:nth-child(even) {
+    background-color: transparent;
+  }
+
+  tr {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    margin: auto;
+  }
+
+  .canvas-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+  }
+
+  #myCanvas {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+
+  }
+
 }

@@ -10,15 +10,24 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="manifest" href="manifest.json">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+    
+    </style>
 
-  <title>Budget Tracker</title>
+  <title>BUDGET TRACKER</title>
 </head>
 <body>
-  <div class="wrapper">
-    <div class="total">
-      <div class="total">Your total is: $<span id="total">0</span></div>
-    </div>
 
+<div class="entire-container">
+
+  <div class="left-container">
+    <div class="logo">Budget Tracker</div>
+
+    <img src="css/img/money-bag.png">
+  
     <div class="form">
       <input type="text" id="t-name" placeholder="Name of transaction" />
       <input type="number" min="0" id="t-amount" placeholder="Transaction amount" />
@@ -26,21 +35,35 @@
       <button id="sub-btn"><i class="fa fa-minus"></i> Subtract Funds</button>
       <p class="error"></p>
     </div>
-
-    <div class="transactions">
-      <table>
-        <thead>
-          <th>Transaction</th>
-          <th>Amount</th>
-        </thead>
-        <tbody id="tbody">
-          
-        </tbody>
-      </table>
-    </div>
-    
-    <canvas id="myChart"></canvas>
   </div>
+
+  <div class="right-container">
+          <div class="wrapper">
+            <div class="total">
+              <div class="total">
+                Total: $<span id="total">0</span>
+              </div>
+            </div>
+          </div>
+  
+            <div class="transactions">
+              <table>
+                <thead>
+                  <th>Transaction</th>
+                  <th>Amount</th>
+                </thead>
+                    <tbody id="tbody">
+                    </tbody>
+              </table>
+            </div>
+            
+          <div class="canvas-container">
+              <canvas id="myChart"></canvas>
+          </div>
+  </div>
+</div>
+
+
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script src="js/index.js"></script>

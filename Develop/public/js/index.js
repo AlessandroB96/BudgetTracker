@@ -66,12 +66,13 @@ function populateChart() {
 
   myChart = new Chart(ctx, {
     type: 'line',
+    responsive: true,
       data: {
         labels,
         datasets: [{
             label: "Total Over Time",
             fill: true,
-            backgroundColor: "#6666ff",
+            backgroundColor: "#009473",
             data
         }]
     }
@@ -103,10 +104,11 @@ function sendTransaction(isAdding) {
   if (!isAdding) {
     transaction.value *= -1;
   }
-
+  
+  
   // add to beginning of current array of data
   transactions.unshift(transaction);
-
+  
   // re-run logic to populate ui with new record
   populateChart();
   populateTable();
@@ -138,7 +140,7 @@ function sendTransaction(isAdding) {
     // fetch failed, so save in indexed db
     console.log(err);
     saveRecord(transaction);
-
+    
     // clear form
     nameEl.value = "";
     amountEl.value = "";
