@@ -47,6 +47,6 @@
     "display": "standalone",
     "start_url": "./index.html",
     "description": "Track your budget by adding or removing expenses",
-    "background_color": "#01579b",
+    "background_color": "#d6ab5b",
     "theme_color": "red"
 }
